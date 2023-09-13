@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+.left_container , .right_container {
+    background-color: #EADBC8;
+    padding: 2rem 4rem;
+    border-radius: 1rem;
+}
+
+.left_container li , .right_container li {
+    margin-top: 1rem;
+    font-size: 1rem;
+    
+}
+
+body {
+    background-color: #F8F0E5;
+}
+
+li a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-brand {
+    color: #102C57;
+}
+
+h2, h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: #102C57;
+}
+
+.hero {
+    background-color: #EADBC8;
+    border-radius: 1rem;
+}
+
+footer {
+    background-color: #EADBC8;
+}
