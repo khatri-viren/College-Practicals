@@ -1,0 +1,200 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#header{
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#brand{
+    flex: 50%;
+}
+
+h1 a{
+    font-size: 50px;
+    font-weight: 100;
+    color: #61764B;
+    text-decoration: none;
+}
+
+#searchbox {
+    flex: 50%;
+    background: linear-gradient(#9BA17B, #61764B);
+    min-width: 400px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    float: left;
+    width: 18rem;
+    padding: 0.5rem;
+    font-size: 15px;
+    color: #61764B;
+    background: white url(Images/search.png) right center no-repeat;
+    border: 1px solid #FAD6A5;
+}
+
+.submit{
+    /* float: right; */
+    padding: 0.5rem;
+    margin-left: 1rem;
+    font-weight: bold;
+    color: white;
+    background: #61764B;
+    font-size: 15px;
+    border: 1px solid #9BA17B;
+}
+.clear{
+    clear: both;
+}
+
+#menu{
+    /* height: 70px; */
+    background: linear-gradient(#9BA17B, #61764B);
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul{
+    list-style: none;
+}
+
+#menu a{
+    padding: 0 30px;
+    height: 30px;
+    border-right: 1px solid white;
+}
+
+#menu a:last-child{
+    border-right: none;
+}
+
+#menu a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    color: white;
+    line-height: 30px;
+    transition: font-size 0.3s ease-in-out;
+}
+
+#menu a:hover, #menu a.active{
+    font-weight: bold;
+    color: #FAD6A5;
+}
+
+@media screen and (max-width:700px) {
+    #menu{
+        flex-direction: column;
+        align-content: center;
+    }
+
+    #menu a{
+        border-right: none;
+    }
+}
+
+#introduction{
+    background:linear-gradient(#61764B, #9BA17B);
+    padding: 30px;
+    margin: 15px 0;
+}
+
+#introduction h3{
+    font-size: 40px;
+    color: #FAD6A5;
+    font-weight: normal;
+}
+
+#introduction p{
+    font-size: 20px;
+    color:#FAD6A5;
+    align-items: justify;
+}
+
+.sidebars{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebarwrapper{
+    flex: 50%;
+    padding: 10px;
+}
+
+.sidebar{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #61764B;
+    border-radius: 20px;
+    padding: 10px 30px;
+    /* flex: 50%; */
+}
+
+.sidebar h3{
+    color: #61764B;
+    font-size: 30px;
+}
+
+#rightsidebar ul li{
+    padding-bottom: 7px;
+    padding-left: 50px;
+    background: url(images/tick.png) no-repeat;
+}
+
+#leftsidebar ul{
+    padding-top: 8px;
+}
+
+#leftsidebar ul li{
+    padding-bottom: 7px;
+    padding-left: 5px;
+    list-style-image: url(images/arrow.png);
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #9BA17B;
+    transition: font-size 0.3s ease-in-out;
+}
+
+
+.sidebar ul li a:hover, .sidebar ul li a.active{
+    text-decoration: none;
+    color: #61764B;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.footer p{
+    color: #FAD6A5;
+}
+
+.footer p a{
+    color: #FAD6A5;
+}
+
+.footer p a:hover{
+    color: white;
+}
