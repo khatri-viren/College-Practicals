@@ -5,7 +5,8 @@ $conn = new mysqli('localhost', 'root', '', 'college');
 if($conn->connect_error){
     echo("error");
 } else {
-    echo("Success");
+    // echo("Successfully Connected");
+    
 }
 
 $name = $_POST['name'];
