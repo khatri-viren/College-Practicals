@@ -23,7 +23,9 @@
 
 <body>
     <h1>Form Something</h1>
+    <a href="home.php">Home page</a><br><br>
     <form action="home.php" method="post">
+        <input type="hidden" name="form" value='formsubmit'>
         <label for="name">Name</label>
         <input type="text" name="name" id="">
         <label for="school">School</label>
@@ -53,18 +55,18 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.querySelector('form');
-    
+
             form.addEventListener('submit', (event) => {
                 let isValid = true;
                 let errorMessages = [];
-    
+
                 // Name validation
                 const name = document.querySelector('input[name="name"]');
                 if (name.value.trim() === '') {
                     isValid = false;
                     errorMessages.push('Name cannot be empty');
                 }
-    
+
                 // Phone number validation
                 const phoneNumber = document.querySelector('input[name="pnumber"]');
                 const phoneNumberRegex = /^\d{10}$/;
@@ -72,7 +74,7 @@
                     isValid = false;
                     errorMessages.push('Please enter a valid 10-digit phone number');
                 }
-    
+
                 // Email validation
                 const email = document.querySelector('input[name="email"]');
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -80,21 +82,21 @@
                     isValid = false;
                     errorMessages.push('Please enter a valid email address');
                 }
-    
+
                 // State validation
                 const state = document.querySelector('input[name="state"]');
                 if (state.value.trim() === '') {
                     isValid = false;
                     errorMessages.push('State cannot be empty');
                 }
-    
+
                 // City validation
                 const city = document.querySelector('input[name="city"]');
                 if (city.value.trim() === '') {
                     isValid = false;
                     errorMessages.push('City cannot be empty');
                 }
-    
+
                 // Pincode validation
                 const pincode = document.querySelector('input[name="pincode"]');
                 const pincodeRegex = /^\d{6}$/;
@@ -102,7 +104,7 @@
                     isValid = false;
                     errorMessages.push('Please enter a valid 6-digit pincode');
                 }
-    
+
                 if (!isValid) {
                     event.preventDefault(); // Prevent form submission if there are validation errors
                     alert(errorMessages.join('\n')); // Display all error messages in a single alert
