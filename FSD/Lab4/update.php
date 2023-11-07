@@ -6,7 +6,9 @@ require_once('connect.php');
 // print_r($_POST);
 // die;
 
-if (isset($_POST['form'])) {
+
+
+if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $name = $_POST['name'];
     $school = $_POST['school'];
@@ -17,10 +19,14 @@ if (isset($_POST['form'])) {
     $country = $_POST['country'];
     $pincode = $_POST['pincode'];
 
+  
 
 $sql = "UPDATE user 
 SET name = '$name', school = '$school', pnumber = $pnumber, email = '$email', state = '$state', city='$city', country='$country', pincode = '$pincode'
 WHERE id = $id";
+
+   
+
 
 if ($conn->query($sql)) {
     header('Location: home.php');

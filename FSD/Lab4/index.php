@@ -6,17 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Something</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: block;
+            margin-bottom: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
         form {
-            display: flex;
-            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
         input,
-        select,
+        select {
+            width: calc(100% - 10px);
+            padding: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
         button {
-            width: 18rem;
-            margin: 1rem 0rem;
-            padding: 5px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>

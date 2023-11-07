@@ -49,68 +49,99 @@ while ($row = $res->fetch_assoc()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        a {
+            display: block;
+            margin: 1rem auto;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #555;
+        }
+
         form {
-            display: flex;
-            flex-direction: column;
+            max-width: 400px;
+            margin: 2rem auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
         input,
-        select,
-        button {
-            width: 18rem;
-            margin: 1rem 0rem;
-            padding: 5px;
+        select {
+            width: calc(100% - 10px);
+            padding: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        hr {
+            border: 1px solid #ccc;
+            margin: 1rem 0;
+        }
+
     </style>
 </head>
 
 <body>
     <h1>Home</h1>
     <a href="index.php">Form Page</a>
-    <!-- <form>
-        <h1>Home</h1>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="" value="<?= $_POST['name'] ?>" disabled>
-        <label for="school">School</label>
-        <input type="text" value="<?= $_POST['school'] ?>" disabled>
-        <select name="school" id="" value="<?= $_POST['school'] ?>">
-            <option value="SCET">SCET</option>
-            <option value="Law">Law</option>
-            <option value="Business">Business</option>
-        </select>
-        <label for="pnumber">Phone Number</label>
-        <input type="number" name="pnumber" id="" value="<?= $_POST['pnumber'] ?>" disabled>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="" value="<?= $_POST['email'] ?>" disabled>
-        <label for="state">State</label>
-        <input type="text" name="state" id="" value="<?= $_POST['state'] ?>" disabled>
-        <label for="city">City</label>
-        <input type="text" name="city" id="" value="<?= $_POST['city'] ?>" disabled>
-        <label for="country">Country</label>
-        <input type="text" value="<?= $_POST['country'] ?>" disabled>
-        <select name="country" id="" disabled="disabled">
-            <option value="India" selected>India</option>
-            <option value="USA" selected>USA</option>
-        </select>
-        <label for="pincode">Pincode</label>
-        <input type="number" name="pincode" id="" value="<?= $_POST['pincode'] ?>" disabled>
-        <button type="submit">Submit</button>
-    </form> -->
-    <?php
-    foreach ($users as $user) {
-        foreach ($user as $key => $value) { ?>
-            <form method="post" action="update.php">
-                <?php if ($key == 'id') {
-                    echo "<input type='hidden' name='$key' value='$value'>";
-                } ?>
-                <span><?= $key ?>:</span>
-                <input type="text" name="<?= $key ?>" value="<?= $value ?>" id=""><br>
+    <div class="container">
+
+        <?php
+        foreach ($users as $user) {
+            foreach ($user as $key => $value) { ?>
+                <form method="post" action="update.php">
+                    <?php if ($key == 'id') {
+                        echo "<input type='hidden' name='$key' value='$value'>";
+                    } ?>
+                    <span><?= $key ?>:</span>
+                    <input type="text" name="<?= $key ?>" value="<?= $value ?>" id=""><br>
+                <?php } ?>
+                <button type="submit" value="update" name="update">Update</button>
+
+                <button type="submit" name="delete" value="delete">Delete</button>
+                </form>
+                <hr>
             <?php } ?>
-            <button type="submit">Update</button>
-            <button type="submit" name="delete" value="delete">Delete</button>
-            </form>
-            <br>
-        <?php } ?>
+    </div>
 </body>
 
 </html>
